@@ -5,7 +5,7 @@ WORKDIR /opt/
 
 COPY ./ /opt/
 
-RUN yarn config set registry https://registry.npm.taobao.org/
+#RUN yarn config set registry https://registry.npm.taobao.org/
 
 RUN  npm install
 
