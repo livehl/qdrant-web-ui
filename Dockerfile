@@ -11,7 +11,7 @@ RUN  npm install
 
 RUN npm build
 
-FROM nginx:1.11-alpine
+FROM nginx:1-alpine-slim
 COPY --from=ybuild  /opt/dist /usr/share/nginx/html/
 EXPOSE 80
 CMD ["/bin/sh","-c", "nginx -g 'daemon off;'"]
