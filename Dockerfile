@@ -1,15 +1,12 @@
-FROM node:18 as ybuild
-
+FROM node:18-slim as ybuild
 
 WORKDIR /opt/
 
 COPY ./ /opt/
 
-#RUN yarn config set registry https://registry.npm.taobao.org/
+RUN   npm install
 
-RUN  npm install
-
-RUN npm build
+RUN npm run build
 
 FROM nginx:1-alpine-slim
 COPY --from=ybuild  /opt/dist /usr/share/nginx/html/
