@@ -1,4 +1,4 @@
-FROM node:15.2-slim as ybuild
+FROM node:18-slim as ybuild
 
 
 WORKDIR /opt/
