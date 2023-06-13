@@ -9,10 +9,11 @@ export default function qdrantClient({ apiKey }) {
   } else {
     url = window.location.href;
   }
-
+  let port=0;
   let options = {
     url,
-    apiKey
+    apiKey,
+    port
   };
 
   return new QdrantClient(options)
